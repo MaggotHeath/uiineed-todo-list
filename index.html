@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Todo List Online - Minimalist, No-Login Required Web Todo App</title>
+        <title>Mi Lista de Tareas del Dia</title>
         <meta
             name="keywords"
             content="online todo list, minimalist todo app, no login todo, web todo list, todo manager, task scheduler, memo app, browser-based todo, instant access, secure storage, personal todo, professional todo, work and life assistant">
@@ -132,7 +132,7 @@
                                 type="text"
                                 rows="3"
                                 class="add-content"
-                                placeholder="Add a to-do item..."
+                                placeholder="Escribe tu tarea aquí..."
                                 v-model="newTodoTitle"
                                 @keyup.enter="addTodo"
                                 :class='{empty:emptyChecked}'/>
@@ -507,7 +507,7 @@
                         this.isEditing = false;
                     },
                     getSlogan() {
-                        return localStorage.getItem('uiineed-slogan') || "Act Now, Simplify Life.☕";
+                        return localStorage.getItem('uiineed-slogan') || "¡Organiza tu día, conquista tu meta!";
                     },
                     contorlScreen: function() {
                         if (this.windowWidth < 768) {
@@ -523,7 +523,7 @@
                         if (this.isShow) {
                             return this.shortCut = '＝';
                         } else {
-                            return this.shortCut = 'OPEN✨';
+                            return this.shortCut = 'Abierto';
                         }
                     },
                     shuffle: function() {
@@ -551,7 +551,7 @@
                         todo.completed = false;
                     },
                     markAllAsCompleted: function() {
-                        confirm('Confirm to mark all as completed?').then((confirmed) => {
+                        confirm('Confirmar hacer el cambio?').then((confirmed) => {
                             if (confirmed) {
                                 this.todos.map(function(todo) {
                                     if (!todo.completed) todo.completed = true;
